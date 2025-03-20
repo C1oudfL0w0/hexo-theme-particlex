@@ -14,21 +14,24 @@
 %>
 <!DOCTYPE html>
 <html lang="<%- config.language %>">
+
 <head>
     <meta charset="utf-8" />
     <title><%= title %></title>
     <meta name="author" content="<%- config.author %>" />
     <meta name="description" content="<%- config.description %>" />
     <meta name="keywords" content="<%- config.keywords %>" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="<%- url_for(theme.avatar) %>" />
     <%- partial("import", { type }) %>
 </head>
+
 <body>
     <div id="layout">
+        <% if (theme.online) { %>
+        <div id="content-background" ref="contentBackground" data-images="<%- theme.contentBackground.map(url_for) %>">
+        </div>
+        <% } %>
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
@@ -56,4 +59,5 @@
     <%- partial("comment") %>
     <% } %>
 </body>
+
 </html>

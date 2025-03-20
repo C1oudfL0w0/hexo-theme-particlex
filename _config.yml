@@ -1,12 +1,19 @@
 # ParticleX Configuration
 # https://github.com/theme-particlex/hexo-theme-particlex
 
+# Change to false in the local offline state to avoid loading online resources
+online: true
+
 # Avatar image
 avatar: /images/avatar.jpg
 
 # Home page background image
 background:
     - /images/background.jpg
+
+# Content (or global) background image
+contentBackground:
+    - /images/content-background.jpg
 
 # Loading image
 loading: /images/loading.gif
