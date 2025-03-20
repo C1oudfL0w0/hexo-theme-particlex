@@ -6,6 +6,19 @@
     <% if (theme.search.enable) { %>
     <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
     <% } %>
+
+    <div class="widget-container">
+        <!--归档-->
+        <% if (site.posts.length){ %>
+            <div class="widget tag">
+                <h3 class="title" style="position:fixed;top:100px;left:50px;"><i class="fa-solid fa-box-archive"></i> 归档</h3>
+                
+                <%- list_archives({format: "YYYY年MM月:"}) %>
+            </div>
+        <% } %>
+    </div>
+
+    <h4>Total <%=site.posts.length%></h4>
     <div id="timeline-wrap" ref="timeline">
         <% posts.reverse().forEach((post, id) => { %>
         <div class="timeline" data-title="<%- post.title.toLowerCase().replace(/\s+/g, "") %>">
