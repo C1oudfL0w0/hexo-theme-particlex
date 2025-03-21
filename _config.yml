@@ -163,3 +163,10 @@ twikoo:
     region:
     path: location.pathname
     lang:
+
+# 友链
+friends:
+  - name: test
+    url: https://example.com
+    avatar: https://example.com
+    description: test
